@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hello Internet — a friendly landing page for the t34a project.">
+  <title>Hello Internet · t34a</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-accent: #131a33;
+      --text: #e8ecf8;
+      --muted: #9aa3c0;
+      --accent: #6c8cff;
+      --accent-2: #58e0c0;
+      --card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, var(--bg-accent), var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1.1rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--accent-2);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    h1 .wave {
+      display: inline-block;
+      animation: wave 2.5s infinite;
+      transform-origin: 70% 70%;
+    }
+
+    @keyframes wave {
+      0%, 60%, 100% { transform: rotate(0deg); }
+      10%, 30% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      40% { transform: rotate(10deg); }
+      50% { transform: rotate(-4deg); }
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 34rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.6rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #0b1020;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(108, 140, 255, 0.25);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      max-width: 56rem;
+      width: 100%;
+      margin-top: 4rem;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+
+    .feature .icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">t34a<span>.</span></div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="https://github.com/ivendorz-bd/t34a">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="badge">✦ Now live on the web</div>
+    <h1><span class="wave">👋</span> Hello, <span class="gradient-text">Internet</span></h1>
+    <p class="subtitle">
+      Welcome to t34a — a fresh start on the open web. Simple, fast, and ready to grow.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://github.com/ivendorz-bd/t34a">View on GitHub</a>
+      <a class="btn btn-secondary" href="#features">Learn more</a>
+    </div>
+
+    <section id="features" class="features">
+      <div class="feature">
+        <div class="icon">⚡</div>
+        <h3>Fast</h3>
+        <p>A single static HTML page with zero dependencies — it loads instantly anywhere.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🎨</div>
+        <h3>Clean design</h3>
+        <p>A modern dark theme with gradient accents, built with plain CSS.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">📱</div>
+        <h3>Responsive</h3>
+        <p>Looks great on phones, tablets, and desktops out of the box.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made with ❤️ · t34a · Hello Internet
+  </footer>
+</body>
+</html>
